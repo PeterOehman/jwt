@@ -17,6 +17,7 @@ const posts = [
   }
 ]
 
+//VERIFIES THE ACCESSTOKEN AND RETURNS POSTS RELATED TO USER
 app.get('/posts', authenticateToken, (req, res) => {
   res.json(posts.filter(post => post.username === req.user.name))
 })
